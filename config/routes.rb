@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
   resources :books, only: [:index,:show,:edit,:create,:destroy,:update] do
-     resource :favorites, only: [:create,:destroy]
+     resource :favorites, only: [:create,:destroy] #それ自身のidが分からなくても、関連する他のモデルのidから特定できる
     resources:book_comments,only:[:create,:destroy]
   
   
